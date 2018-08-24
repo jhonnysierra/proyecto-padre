@@ -13,6 +13,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import fenix_poject.entidades.Persona;
+import fenix_poject.entidades.Programa;
+import fenix_poject.entidades.PuntoPlaneta;
 
 @RunWith(Arquillian.class)
 public class TestModel {

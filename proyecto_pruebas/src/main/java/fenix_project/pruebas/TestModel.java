@@ -12,6 +12,7 @@ import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import fenix_poject.entidades.Cedula;
 import fenix_poject.entidades.Persona;
 import fenix_poject.entidades.Programa;
 import fenix_poject.entidades.PuntoPlaneta;
@@ -24,7 +25,7 @@ public class TestModel {
 
 	@Deployment
 	public static Archive<?> createTestArchive() {
-		return ShrinkWrap.create(WebArchive.class, "test.war").addPackage(Persona.class.getPackage())
+		return ShrinkWrap.create(WebArchive.class, "test.war").addPackage(Cedula.class.getPackage())
 				.addAsResource("persistenceForTest.xml", "META-INF/persistence.xml")
 				.addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml");
 	}

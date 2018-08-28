@@ -14,9 +14,10 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Max;
 
+
 /**
  * Clase encargada de representar la informacion de una persona
- * @author Jhonny_Jorge
+ * @author Jhonny_Jorge_Javier
  * @version 1.0 16-agosto-2018
  *
  */
@@ -54,12 +55,16 @@ public class Persona implements Serializable {
 	/**
 	 * Lista que contiene los telefonos asociados a una persona
 	 */
+	
+	@Column(length=10)
 	@ElementCollection
 	private List<String> telefonos;
+	/*private Map<Integer,String> telefonos;*/
 	
 	/**
 	 * Genero de una persona 
 	 */
+	@Column (length=9)
 	@Enumerated(EnumType.STRING)
 	private Genero genero;
 	
@@ -72,6 +77,10 @@ public class Persona implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	
+	/**
+	 * Clase enumeracion que contiene las opciones para genero de una persona 
+	 *
+	 */
 	private enum Genero{
 		masculino, femenino;
 	}
@@ -95,37 +104,68 @@ public class Persona implements Serializable {
 	 */
 	public void setCedula(String cedula) {
 		this.cedula = cedula;
-	}   
+	}
+	
+	/**
+	 * Metodo get de nombre 
+	 */
 	public String getNombre() {
 		return this.nombre;
 	}
 
+	/**
+	 * Metodo set de nombre 
+	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}   
+	}
+	
+	/**
+	 * Metodo get de apellido 
+	 */	
 	public String getApellido() {
 		return this.apellido;
 	}
 
+	/**
+	 * Metodo set de apellido 
+	 */	
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
-	}   
+	}
+	
+	/**
+	 * Metodo get de edad 
+	 */	
 	public int getEdad() {
 		return this.edad;
 	}
 
+	/**
+	 * Metodo set de edad 
+	 */	
 	public void setEdad(int edad) {
 		this.edad = edad;
-	}   
+	}
+	
+	/**
+	 * Metodo get de fecha 
+	 */	
 	public Date getFecha() {
 		return this.fecha;
 	}
 
+	/**
+	 * Metodo set de fecha 
+	 */
 	public void setFecha(Date fecha) {
 		this.fecha = fecha;
 	}
 	
 	
+	/**
+	 * Metodo hashCode cedula 
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -135,6 +175,9 @@ public class Persona implements Serializable {
 		return result;
 	}
 	
+	/**
+	 * Metodo equals Persona 
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
